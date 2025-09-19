@@ -1,0 +1,44 @@
+/* Button Menu */
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One|IM+Fell+English|Montserrat|Sanchez|Rock+Salt);
+.buttons {
+  background: url("../images/bg-horizontal-menu.jpg"); 
+}
+.buttons li {
+  display: inline-block; 
+}
+.buttons a {
+  display: inline-block;
+  color: #FFF;
+  background: #64E0BA;
+  padding: 10px 18px;
+  margin: 15px 10px;
+  font-family: 'Fredoka One', sans-serif;
+  border-radius: 20px;
+  box-shadow: 0 8px 0 0 #4AA185; 
+}
+.buttons a:hover {
+  background: #1d8f6c; 
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+section {
+  padding: 5rem 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out; 
+}
+
+ul {
+  list-style-type: none; 
+}

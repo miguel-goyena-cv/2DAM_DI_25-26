@@ -1,0 +1,7 @@
+.buttons a {
+    border-radius: px-to-em($value-px);
+}
+
+.buttons p {
+    @include px-to-em-mixin($value-px, 16px, border-radius)
+}
