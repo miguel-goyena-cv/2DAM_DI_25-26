@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One|IM+Fell+English|Montserrat|Sanchez|Rock+Salt);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+* {
+  box-sizing: border-box;
+}
+
+section, footer {
+  padding: 5rem 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Button Menu */
+.buttons {
+  background: url("../images/bg-horizontal-menu.jpg");
+}
+.buttons li {
+  display: inline-block;
+}
+.buttons a {
+  display: inline-block;
+  color: #FFF;
+  background: #64E0BA;
+  padding: 0.625em 1.125em;
+  margin: 15px 10px;
+  font-family: "Fredoka One", sans-serif;
+  border-radius: 1.25em;
+  box-shadow: 0 8px 0 0 #4AA185;
+}
+.buttons a:hover {
+  background: rgb(28.5, 142.5, 107.564516129);
+}
+.buttons a:active {
+  position: relative;
+  top: 4px;
+  background: #3ad8a7;
+}
+
+main {
+  background-color: rgb(170.0362318841, 181.5, 68.5);
+}
+main h1 {
+  font-family: Roboto;
+  text-align: center;
+  background-color: rgb(143.28, 154.424, 44.576);
+}
+main .banner {
+  font-family: "Pacifico";
+  text-align: center;
+  height: 2em;
+  background-color: rgb(180, 194, 56);
+}
+main .container {
+  font-family: "Pacifico";
+  text-align: center;
+  background-color: rgba(180, 194, 56, 0.7);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: url("../images/bg-horizontal-menu.jpg");
+  font-style: normal;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+@use 'sass:color';
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+@mixin text_properties($font-family, $align) {
+    font-family: $font-family;
+   
+    text-align: $align;
+}
+
+$color: rgb(180, 194, 56);
+
+main {
+    background-color: color.adjust($color, $saturation: -10%);
+    h1 {
+        @include text_properties(Roboto, center);
+        background-color: color.adjust($color, $lightness: -10%);
+    }
+    .banner {
+        @include text_properties("Pacifico", center);
+        height: 2em;
+        background-color: $color;
+    }
+    .container {
+        @include text_properties("Pacifico", center);
+        background-color: color.adjust($color, $alpha: -0.3);
+    }
+}

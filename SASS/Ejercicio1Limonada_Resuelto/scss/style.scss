@@ -1,0 +1,36 @@
+@use 'sass:color';
+@use 'sass:math';
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One|IM+Fell+English|Montserrat|Sanchez|Rock+Salt);
+
+$value-px: 10px;
+
+* {
+    box-sizing: border-box;
+}
+
+
+section {
+    padding: 5rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@import "buttons";
+@import "components";
+@import "footer";
+
+
+

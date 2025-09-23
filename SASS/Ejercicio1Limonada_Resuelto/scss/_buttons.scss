@@ -1,0 +1,42 @@
+/* Button Menu */
+@use 'sass:color';
+
+$value-px: 10px;
+
+@function dePxaEmFuncion($valor_px){
+    @return ($valor_px/16px)*1em;
+}
+@mixin dePxaEm($parametro, $valor_px){
+    #{$parametro}: dePxaEmFuncion($valor_px);
+}
+
+
+.buttons {
+    background: url('../images/bg-horizontal-menu.jpg');
+    li {
+        display: inline-block;
+    }
+    a {
+        $mi_color:#64E0BA;
+        display: inline-block;
+        color: #FFF;
+        background: $mi_color;
+        padding: dePxaEmFuncion($value-px) dePxaEmFuncion($value-px*1.8);
+        margin: $value-px*1.5 $value-px;
+        font-family: 'Fredoka One', sans-serif;
+        @include dePxaEm(border-radius, 2*$value-px);
+        box-shadow: 0 8px 0 0 #4AA185;
+
+        &:hover {
+            //background: darken($mi_color, 30%);
+            background: color.adjust( $mi_color,$lightness:-30%);
+        }
+
+        &:active {
+            position: relative;
+            top: 4px;
+            background: #3ad8a7;
+        }
+    
+    }
+}
