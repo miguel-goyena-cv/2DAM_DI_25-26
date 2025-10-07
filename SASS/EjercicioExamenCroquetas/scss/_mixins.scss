@@ -1,0 +1,20 @@
+
+// Aplicar un padding en todos los ejes
+@mixin padding-xy($x, $y) {
+    padding-left: $x;
+    padding-right: $x;
+    padding-top: $y;
+    padding-bottom: $y;
+}  
+
+// Background con gradientes
+@function gradient-bg($color1, $color2: null) {
+
+    @if ($color1 != null and $color2 != null) {
+        @return linear-gradient(90deg, $color1 0%, $color2 100%);
+    } 
+    @else {
+        @return $color1;
+    }
+
+} 

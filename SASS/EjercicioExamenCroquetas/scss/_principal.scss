@@ -1,0 +1,50 @@
+@use 'sass:color';
+
+//Componentes principales
+main {
+    width: 100%;
+    padding-right: $padding-x;
+    padding-left: $padding-x;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.base {
+    color: $text-color;
+    font-size: $font-size-lg;
+    width: 90%;
+    background-color: color.adjust($body-bg, $lightness: 15%);
+}
+
+.contenedor {
+    @extend .base;
+    background-color: $primary;
+    font-size: $font-size-lg * 0.9;
+    margin: auto;
+}
+
+.subcontenedor {
+    @extend .contenedor;
+    font-size: $font-size-lg * 0.7;
+    @include padding-xy($padding-x, $padding-y);
+}
+
+.seccion_articulo {
+    @extend .navbar;
+    border: $border-radius solid $border-bottom-color;
+    color: $text-color;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2);
+    margin: 0 3rem 0 3rem;
+
+    img {
+        @include padding-xy($padding-x, 20px);
+    }
+
+    .seccion__articulo-titulo{
+        font-size: $font-size-base*1.2;
+    }
+
+    .seccion__articulo-cuerpo{
+        font-size: $font-size-base*0.9;
+    }
+}

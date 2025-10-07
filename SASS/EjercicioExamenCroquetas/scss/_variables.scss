@@ -1,0 +1,26 @@
+@use 'sass:color';
+
+//Colores primarios
+$red: rgb(224, 100, 176);
+$yellow: #e0de64;
+$blue: rgb(18, 171, 231);
+$white: whitesmoke;
+
+//Triada o paleta de colores
+$primary: $yellow;
+$secondary: color.adjust($blue, $lightness: 10%);
+$accent: color.adjust($red, $lightness: -20%);
+$body-bg: $white;
+
+//Color de la fuente y tamaño
+$text-color: black;
+$font-size-base: 1.2rem;
+$font-size-lg: $font-size-base*1.25;
+
+//Color para el borde y su radio
+$border-bottom-color: color.adjust($secondary, $lightness: -10%);
+$border-radius: .5rem;
+
+//Padding
+$padding-x: .5rem;
+$padding-y: .5rem;
