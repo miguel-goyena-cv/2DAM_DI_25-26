@@ -20,8 +20,8 @@ export class BotonSaludar extends Boton{
     }
 
     public hacerAccion(): void {
-        let elemento : string = this.data;
-        alert("Hola: "+elemento);
+        let elemento : HTMLInputElement = this.data;
+        alert("Hola: "+elemento.value);
     }
 
 }
