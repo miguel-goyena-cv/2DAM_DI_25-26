@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-6">
             @if (!esOculto()){
-                <p class="display-1">{{title}}</p>
+                <p class="display-1">{{title | uppercase}}</p>
             }
             <button class="btn btn-primary" (click)="toggleName()">{{titleBoton()}}</button>
             <p class="display-3">{{imagenClickeada}}</p>
@@ -16,5 +16,10 @@
                 <app-foto-personal [title]="photo.nombre" [srcImage]="photo.foto" (clickFoto)="ensenarClick($event)"/>
             </div>
         }
+    </div>
+    <div>
+        <app-copyright>
+            <p class="display-3">@CopyRigth MG 2025</p>
+        </app-copyright>
     </div>
 </div>
