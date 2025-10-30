@@ -1,0 +1,22 @@
+@let contactosArray = contactos()||[];
+@if (contactosArray.length > 0){
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (contact of contactosArray; track $index){
+            <tr>
+                <th scope="row">$index</th>
+                <td>{{contact.email}}</td>
+                <td>{{contact.message}}</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+}
+

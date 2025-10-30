@@ -2,11 +2,10 @@ import { Component, signal, SimpleChanges } from '@angular/core';
 import { FotoPersonal } from "../foto-personal/foto-personal";
 import { FotoPerfilModel } from '../models/FotoPersonalModel';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { Copyright } from "../copyright/copyright";
 
 @Component({
   selector: 'app-profile',
-  imports: [FotoPersonal, UpperCasePipe, Copyright],
+  imports: [FotoPersonal, UpperCasePipe],
   templateUrl: './profile.html',
   styleUrl: './profile.scss'
 })
