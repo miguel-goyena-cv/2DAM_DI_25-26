@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { ContactModel } from '../models/ContactModel';
+import { ContactService } from '../services/contact-service';
 
 @Component({
   selector: 'app-contact-list',
@@ -9,8 +10,12 @@ import { ContactModel } from '../models/ContactModel';
 })
 export class ContactList {
 
-  contactos = input<ContactModel[]>();
+  constructor(private contactService: ContactService) { };
 
-  //get contactosArray contactos.
+  contactos: ContactModel[] = [];
+
+  ngOnInit() {
+    this.contactos = this.contactService.listarContactos();
+  }
 
 }

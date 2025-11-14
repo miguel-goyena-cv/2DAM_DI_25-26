@@ -1,6 +1,7 @@
 import { Component, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactModel } from '../models/ContactModel';
+import { ContactService } from '../services/contact-service';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,7 +11,8 @@ import { ContactModel } from '../models/ContactModel';
 })
 export class ContactForm {
 
-  contactoNuevo = output<ContactModel>();
+  constructor(private contactService: ContactService){};
+
 
   contactForm = new FormGroup({
     email: new FormControl('', [Validators.required,
@@ -28,7 +30,7 @@ export class ContactForm {
 
   sendMessage() {
     let contacto = new ContactModel(this.contactForm.value.email!, this.contactForm.value.message!);
-    this.contactoNuevo.emit(contacto);
+    this.contactService.anadirContacto(contacto);
   }
 
 }
