@@ -11,10 +11,4 @@ import { ContactModel } from '../models/ContactModel';
 })
 export class Contact {
 
-  contactos: ContactModel[] = [];
-
-  crearContacto(contacto: ContactModel) {
-    this.contactos.push(contacto);
-  }
-
 }

@@ -1,11 +1,13 @@
 import { Component, signal, SimpleChanges } from '@angular/core';
 import { FotoPersonal } from "../foto-personal/foto-personal";
 import { FotoPerfilModel } from '../models/FotoPersonalModel';
-import { TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { UpperCasePipe, AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { ProfileService } from '../services/profile-service';
 
 @Component({
   selector: 'app-profile',
-  imports: [FotoPersonal, UpperCasePipe],
+  imports: [FotoPersonal, UpperCasePipe, AsyncPipe],
   templateUrl: './profile.html',
   styleUrl: './profile.scss'
 })
@@ -15,20 +17,16 @@ export class Profile {
   esOculto = signal(false);
   titleBoton = signal('Ocultar');
   imagenClickeada = "";
-  photoTitle = "Yo Contento";
-  photoSrc = "https://static.vecteezy.com/system/resources/previews/047/408/042/non_2x/a-boy-happy-mode-emoji-style-happy-kids-avatars-cute-children-smiling-boy-girl-in-rounds-set-illustration-girl-and-boy-avatar-happy-kids-child-happiness-boy-happy-face-illustration-art-vector.jpg";
-  photos: FotoPerfilModel[] = [];
 
+  photosAsync$!: Observable<FotoPerfilModel[]>;
+
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
-    let fotoContento = new FotoPerfilModel("Estoy Contento",
-      "https://img.freepik.com/vector-gratis/ilustracion-joven-sonriente_1308-173524.jpg?semt=ais_hybrid&w=740&q=80", "");
 
-    let fotoTriste = new FotoPerfilModel("Estoy Triste",
-      "https://static.vecteezy.com/system/resources/previews/053/232/166/non_2x/sad-boy-cartoon-avatar-illustration-free-vector.jpg"
-      , "");
+    // Hago la llamada a la API para obtener la lista de Perfiles
+    this.photosAsync$ = this.profileService.getFotoPerfil();
 
-    this.photos = [fotoContento, fotoTriste];
   }
 
   toggleName() {

@@ -10,12 +10,13 @@ export class FotoPersonal {
 
   title = input("Title");
   srcImage = input("default.jpg");
+  mensajeClick = input("Pinchado en:...");
 
   clickFoto = output<string>();
 
 
   clickImagen() {
-    this.clickFoto.emit("Pinchado en: "+this.title());
+    this.clickFoto.emit(this.mensajeClick());
   }
 
 }

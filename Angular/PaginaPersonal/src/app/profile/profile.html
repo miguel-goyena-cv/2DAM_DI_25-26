@@ -10,11 +10,14 @@
 
     </div>
     <div class="row">
-        @for (photo of photos; track $index)
-        {
-            <div class="col-6">
-                <app-foto-personal [title]="photo.nombre" [srcImage]="photo.foto" (clickFoto)="ensenarClick($event)"/>
-            </div>
+        @if (photosAsync$ | async; as photos) {
+            @for (photo of photos; track $index)
+            {
+                <div class="col-6">
+                    <app-foto-personal [title]="photo.nombre" [srcImage]="photo.foto" [mensajeClick]="photo.mensajeClick" (clickFoto)="ensenarClick($event)"/>
+                </div>
+            }
         }
+
     </div>
 </div>
