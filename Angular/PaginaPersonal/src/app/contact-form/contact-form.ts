@@ -31,6 +31,7 @@ export class ContactForm {
   sendMessage() {
     let contacto = new ContactModel(this.contactForm.value.email!, this.contactForm.value.message!);
     this.contactService.anadirContacto(contacto);
+    
   }
 
 }
