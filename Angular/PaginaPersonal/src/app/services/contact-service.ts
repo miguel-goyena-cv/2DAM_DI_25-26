@@ -3,7 +3,8 @@ import { ContactModel } from '../models/ContactModel';
 import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const URL_BASE: String = 'https://6790ccf7af8442fd7377c747.mockapi.io';
+//const URL_BASE: String = 'https://6790ccf7af8442fd7377c747.mockapi.io';
+const URL_BASE: String = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
