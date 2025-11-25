@@ -20,7 +20,6 @@ export class ContactService {
       .subscribe(newContact => {
         alert('Contact Created:' + JSON.stringify(newContact));
         this.notifyUpdateContact(null);
-        this.notifyUpdateContact("a");
       });
   }
 
